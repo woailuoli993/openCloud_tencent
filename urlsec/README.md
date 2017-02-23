@@ -1,12 +1,19 @@
 # Restful Web for Tencent_url_Security
 
 
+## 部署 
+1. 在这[两行代码][1]里填写你的 appid 及 key.
+2. 安装好maven
+3. 在 当前目录下 运行 `mvn test`
+如果提示成功
+4. `mvn clean jetty:run` 运行 
+
 
 
 
 ##测试 
 
-web地址为: http://192.168.223.63/
+web地址为: localhost:8060 
 
 api 说明及事例：
 
@@ -26,7 +33,7 @@ api 说明及事例：
 
 如果要查询 `www.gayhub.com` 这个网址的安全性
 
-只需浏览器输入 http://192.168.223.63/query?url=www.gayhub.com
+只需浏览器输入 http://localhost:8060/query?url=www.gayhub.com
 
 结果：
 ```
@@ -46,3 +53,6 @@ api 说明及事例：
   ]
 }
 ```
+
+
+[1]:https://github.com/woailuoli993/tcUrlSec/blob/master/urlsec/src/main/java/udp_model/UdpUrlSec.java#L19-L20

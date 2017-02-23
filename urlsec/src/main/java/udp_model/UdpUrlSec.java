@@ -17,7 +17,7 @@ import udp_model.UrlInfo;
 
 public class UdpUrlSec {
     private final static int APPID =  666666666;        // add your APPID
-    private final static String SEC_KEY = "";           // add your SEC_KEY
+    private final static String SEC_KEY = "ABCDEFG";           // add your SEC_KEY
     private final static String TENCENT_API_URL = "cloud.urlsec.qq.com";
     private final static int TENCENT_API_PROT = 15113;
 
@@ -114,83 +114,7 @@ public class UdpUrlSec {
 	    }
 
 	public static void main(String[] args) throws Exception {
-//        if(args.length<2)
-//        {
-//            System.out.println("Usage: bin appid key");
-//            return;
-//        }
-//
-//        int uiAppId = Integer.parseInt(args[0]);
-//        String strAppdKey = args[1];
-//        int uiAppId = APPID;
-//        String strAppdKey = SEC_KEY;
-//
-//		WXBizMsgCrypt pc = new WXBizMsgCrypt(strAppdKey);
-//
-//		Req.ReqPkg.Builder reqPkg = Req.ReqPkg.newBuilder();
-//		Req.ReqPkg.Header.Builder header = Req.ReqPkg.Header.newBuilder();
-//
-//		header.setAppid(uiAppId);
-//		header.setEchostr(ByteString.copyFromUtf8("1111"));
-//		header.setIp(1234);
-//
-//		long currentTime=new Date().getTime();
-//		header.setTime(currentTime/1000);
-//
-//
-//		String sign = UdpUrlSec.MD5(String.valueOf(currentTime/1000)+strAppdKey);
-//
-//
-//		sign = sign.toLowerCase().substring(16, 32);
-//
-//
-//		header.setSign(ByteString.copyFromUtf8(sign));
-//
-//		header.setV(ByteString.copyFromUtf8("1.0"));
-//
-//		Req.ReqPkg.ReqInfo.Builder reqInfo = Req.ReqPkg.ReqInfo.newBuilder();
-//		reqInfo.setDeviceid(ByteString.copyFromUtf8("1"));
-//		reqInfo.setId(1);
-//		reqInfo.setUrl(ByteString.copyFromUtf8("http://baidu.com"));
-//
-//
-//		byte[] s = reqInfo.build().toByteArray();
-//
-//		// 加密处理
-//		String miwen = pc.encrypt(s);
-//
-//		reqPkg.setHeader(header);
-//		reqPkg.setReqinfo(ByteString.copyFromUtf8(miwen));
-//
-//		DatagramSocket client = new DatagramSocket();
-//
-//		InetAddress addr = InetAddress.getByName("cloud.urlsec.qq.com");
-//
-//		System.out.println("server ip:"+addr.toString());
-//
-//        int port = 15113;
-//        DatagramPacket sendPacket
-//            = new DatagramPacket(reqPkg.build().toByteArray() ,reqPkg.build().toByteArray().length , addr , port);
-//        client.send(sendPacket);
-//
-//
-//        System.out.println("发送长度:" + reqPkg.build().toByteArray().length);
-//
-//        byte[] recvBuf = new byte[100];
-//        DatagramPacket recvPacket
-//            = new DatagramPacket(recvBuf , recvBuf.length);
-//        client.receive(recvPacket);
-//
-//        Rsp.RspPkg rsp = Rsp.RspPkg.parseFrom(Arrays.copyOf(recvPacket.getData(), recvPacket.getLength()));
-//
-//        //String recvStr = new String( , 0 ,);
-//        System.out.println("收到查询返回包:");
-//        System.out.println("查询的url:" + rsp.getInfos().getUrl().toStringUtf8());
-//        System.out.println("查询的url的类型:" + rsp.getInfos().getUrltype());
-//        System.out.println("查询的url的恶意类型:" + rsp.getInfos().getEviltype());
-//
-//        client.close();
-//	}
+
         String url = "www.google.com";
 
         UrlInfo ui = UdpUrlSec.getSec(url);

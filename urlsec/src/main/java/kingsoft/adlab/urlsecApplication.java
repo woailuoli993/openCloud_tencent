@@ -16,7 +16,7 @@ import java.net.URI;
 @ApplicationPath("/")
 public class urlsecApplication extends ResourceConfig{
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://0.0.0.0/";
+    public static final String BASE_URI = "http://0.0.0.0:8060/";
 
 
     /**
